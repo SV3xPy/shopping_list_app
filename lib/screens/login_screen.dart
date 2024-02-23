@@ -26,9 +26,9 @@ class _nameState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      width: double.infinity,
       height: MediaQuery.of(context).size.height -
           MediaQuery.of(context).padding.top,
+      width: double.infinity,
       decoration: const BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover, image: AssetImage('images/fondo.jpg'))),
@@ -36,23 +36,37 @@ class _nameState extends State<LoginScreen> {
         alignment: Alignment.center,
         children: [
           Positioned(
-              top: 470,
-              child: Opacity(
-                opacity: .5,
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20)),
-                  height: 155,
-                  width: MediaQuery.of(context).size.width * 9,
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: [txtUser, const SizedBox(height: 10), pwdUser],
-                  ),
+            top: 470,
+            child: Opacity(
+              opacity: .65,
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+                height: 155,
+                width: MediaQuery.of(context).size.width * .9,
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    txtUser,
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    pwdUser
+                  ],
                 ),
-              )),
-          Image.asset("images/logo_text.png"),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 450,
+            height: 180, // Altura deseada
+            child: Image.asset(
+              "images/logo_text.png",
+              fit: BoxFit.fitWidth, // Ajusta la imagen al ancho del contenedor
+            ),
+          ),
           Positioned(
               bottom: 50,
               child: Container(
