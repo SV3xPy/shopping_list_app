@@ -44,7 +44,7 @@ class _nameState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
-                height: 155,
+                height: 165,
                 width: MediaQuery.of(context).size.width * .9,
                 child: ListView(
                   shrinkWrap: true,
@@ -68,9 +68,9 @@ class _nameState extends State<LoginScreen> {
             ),
           ),
           Positioned(
-              bottom: 50,
+              bottom: 40,
               child: Container(
-                height: 200,
+                height: 190,
                 width: MediaQuery.of(context).size.width -
                     MediaQuery.of(context).padding.top,
                 child: ListView(shrinkWrap: true, children: [

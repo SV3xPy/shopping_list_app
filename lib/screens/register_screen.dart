@@ -185,7 +185,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
     const space = SizedBox(
-      height: 10,
+      height: 20,
     );
     return Scaffold(
       appBar: AppBar(
@@ -194,45 +194,47 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(children: <Widget>[
-            txtNombre,
-            space,
-            txtEmail,
-            space,
-            txtContrasena,
-            Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: Center(
-                  child: GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  _showSelectPhotoOptions(context);
-                },
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(children: <Widget>[
+              txtNombre,
+              space,
+              txtEmail,
+              space,
+              txtContrasena,
+              Padding(
+                padding: const EdgeInsets.all(28.0),
                 child: Center(
-                  child: Container(
-                      height: 125.0,
-                      width: 125.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey.shade200,
-                      ),
-                      child: Center(
-                        child: _image == null
-                            ? const Text(
-                                'Sin imagen',
-                                style: TextStyle(fontSize: 15),
-                              )
-                            : CircleAvatar(
-                                backgroundImage: FileImage(_image!),
-                                radius: 75.0,
-                              ),
-                      )),
-                ),
-              )),
-            ),
-            btnSubmit,
-          ]),
+                    child: GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    _showSelectPhotoOptions(context);
+                  },
+                  child: Center(
+                    child: Container(
+                        height: 125.0,
+                        width: 125.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.grey.shade200,
+                        ),
+                        child: Center(
+                          child: _image == null
+                              ? const Text(
+                                  'Sin imagen',
+                                  style: TextStyle(fontSize: 15),
+                                )
+                              : CircleAvatar(
+                                  backgroundImage: FileImage(_image!),
+                                  radius: 45.0,
+                                ),
+                        )),
+                  ),
+                )),
+              ),
+              btnSubmit,
+            ]),
+          ),
         ),
       ),
     );
