@@ -9,7 +9,7 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: const Text('Dashboard'),
       ),
       drawer: Drawer(
         child: ListView(children: [
@@ -19,24 +19,31 @@ class DashboardScreen extends StatelessWidget {
                       NetworkImage('https://i.pravatar.cc/150?img=63')),
               accountName: Text('UsuarioPlanta'),
               accountEmail: Text('plant@gmail.com')),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.phone),
             title: Text('Practica'),
             subtitle: Text('Aqui iria la descricion si hubiera una'),
             trailing: Icon(Icons.chevron_right),
           ),
           ListTile(
-            leading: Icon(Icons.shop),
-            title: Text('Mi despensa'),
-            subtitle: Text('Relacion de productos que no voy a usar'),
-            trailing: Icon(Icons.chevron_right),
+            leading: const Icon(Icons.shop),
+            title: const Text('Mi despensa'),
+            subtitle: const Text('Relacion de productos que no voy a usar'),
+            trailing: const Icon(Icons.chevron_right),
             onTap: () => Navigator.pushNamed(context, '/despensa'),
           ),
           ListTile(
-            leading: Icon(Icons.close),
-            title: Text('Salir'),
-            subtitle: Text('Aqui iria la descricion si hubiera una'),
-            trailing: Icon(Icons.chevron_right),
+            leading: const Icon(Icons.shop),
+            title: const Text('Movies App'),
+            subtitle: const Text('Consulta de peliculas populares'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.pushNamed(context, '/movies'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.close),
+            title: const Text('Salir'),
+            subtitle: const Text('Aqui iria la descricion si hubiera una'),
+            trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.pop(context);
               Navigator.pop(context);

@@ -65,8 +65,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     final conNombre = TextEditingController();
     final txtNombre = TextFormField(
       keyboardType: TextInputType.text,
@@ -90,10 +91,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
     );
     final conContrasena = TextEditingController();
-    final FocusNode _passwordFocusNode = FocusNode();
+    final FocusNode passwordFocusNode = FocusNode();
     final txtContrasena = TextFormField(
       controller: conContrasena,
-      focusNode: _passwordFocusNode,
+      focusNode: passwordFocusNode,
       obscureText: !_passwordVisible,
       keyboardType: TextInputType.visiblePassword,
       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -106,7 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             setState(() {
               _passwordVisible = !_passwordVisible;
             });
-            _passwordFocusNode.requestFocus();
+            passwordFocusNode.requestFocus();
           },
         ),
         border: const OutlineInputBorder(),
@@ -154,8 +155,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     final btnSubmit = ElevatedButton.icon(
       onPressed: () {
-        if (_formKey.currentState!.validate()) {
-          _formKey.currentState!.save();
+        if (formKey.currentState!.validate()) {
+          formKey.currentState!.save();
           Fluttertoast.showToast(
             msg: "Todo en orden",
             toastLength: Toast.LENGTH_SHORT,
@@ -176,8 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         style: TextStyle(fontSize: 18),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
-        onPrimary: Colors.white,
+        foregroundColor: Colors.white, backgroundColor: Colors.blue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
@@ -192,7 +192,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         title: const Text('Registro'),
       ),
       body: Form(
-        key: _formKey,
+        key: formKey,
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
@@ -226,7 +226,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 )
                               : CircleAvatar(
                                   backgroundImage: FileImage(_image!),
-                                  radius: 45.0,
+                                  radius: 65.0,
                                 ),
                         )),
                   ),

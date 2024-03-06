@@ -69,7 +69,7 @@ class _nameState extends State<LoginScreen> {
           ),
           Positioned(
               bottom: 40,
-              child: Container(
+              child: SizedBox(
                 height: 190,
                 width: MediaQuery.of(context).size.width -
                     MediaQuery.of(context).padding.top,
@@ -83,11 +83,11 @@ class _nameState extends State<LoginScreen> {
                       setState(() {
                         isLoading = !isLoading;
                       });
-                      Future.delayed(new Duration(milliseconds: 5000), () {
+                      Future.delayed(const Duration(milliseconds: 5000), () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => new RegisterScreen(),
+                              builder: (context) => const RegisterScreen(),
                             ));
                       });
                     },
@@ -112,7 +112,7 @@ class _nameState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => new DashboardScreen(),
+                            builder: (context) => const DashboardScreen(),
                           ));
                     });
                   }),
@@ -120,11 +120,11 @@ class _nameState extends State<LoginScreen> {
                     setState(() {
                       isLoading = !isLoading;
                     });
-                    Future.delayed(new Duration(milliseconds: 5000), () {
+                    Future.delayed(const Duration(milliseconds: 5000), () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => new DashboardScreen(),
+                            builder: (context) => const DashboardScreen(),
                           ));
                     });
                   }),
@@ -132,11 +132,11 @@ class _nameState extends State<LoginScreen> {
                     setState(() {
                       isLoading = !isLoading;
                     });
-                    Future.delayed(new Duration(milliseconds: 5000), () {
+                    Future.delayed(const Duration(milliseconds: 5000), () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => new DashboardScreen(),
+                            builder: (context) => const DashboardScreen(),
                           ));
                     });
                   }),
@@ -144,13 +144,12 @@ class _nameState extends State<LoginScreen> {
                     setState(() {
                       isLoading = !isLoading;
                     });
-                    Future.delayed(new Duration(milliseconds: 5000), () {
+                    Future.delayed(const Duration(milliseconds: 5000), () {
                       /*Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => new DashboardScreen(),
                           ))*/
-                      ;
                       Navigator.pushNamed(context, "/dash").then((value) {
                         setState(() {
                           isLoading != isLoading;

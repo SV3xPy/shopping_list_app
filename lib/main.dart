@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/app_value_notifier.dart';
 import 'package:flutter_application_1/screens/dashboard_screen.dart';
 import 'package:flutter_application_1/screens/despensa_screen.dart';
+import 'package:flutter_application_1/screens/detail_movie_screen.dart';
+import 'package:flutter_application_1/screens/popular_movies_screen.dart';
 import 'package:flutter_application_1/screens/register_screen.dart';
 import 'package:flutter_application_1/screens/splash_screen.dart';
 import 'package:flutter_application_1/settings/theme.dart';
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
             routes: {
               "/dash": (BuildContext context) => const DashboardScreen(),
               "/despensa": (BuildContext context) => const DespensaScreen(),
-              "/register": (BuildContext context) => const RegisterScreen()
+              "/register": (BuildContext context) => const RegisterScreen(),
+              "/movies": (BuildContext context) => const PopularMoviesScreen(),
+              "/detail": (BuildContext context) => const DetailMovieScreen()
             },
           );
         });
